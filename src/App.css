@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: #17181f;
+  color: #aaa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main{
+  max-width: 300px;
+  margin: 20px auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form{
   display: flex;
-  flex-direction: column;
+  margin-top: 20px;
+}
+
+form input[type="text"]{
+  background-color: #1e1f26;
+  color: #aaa;
+  border: 0;
+  border-radius: 10px;
+  padding: 5px 4px;
+  width: 100%;
+  height: 30px;
+}
+
+form button{
+  background-color: #021eeb;
+  color: #aaa;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 5px 4px;
+  cursor: pointer;
+}
+
+div.task{
+  background-color: #30313D;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 5px;
+  display: flex;
+  transition: opacity 0.3s linear;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+div.task svg{
+  height: 20px;
+  margin-right: 4px;
+  margin-left: 4px;
+  fill: #61DAFB;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.task.done{
+  opacity: 0.25;
+}
+
+div.taskName, div.task form{
+  flex-grow: 1;
+}
+
+div.task span{
+  position: relative;
+}
+
+div.task span:before{
+  content:'';
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #ddd;
+  position: absolute;
+  top: 10px;
+  transition: width 0.1s linear;
+}
+
+div.task.done span:before{
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+h2{
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+button.delete{
+  background: none;
+  border: none;
+  display: flex;
+  cursor: pointer;
+}
+
+button.delete svg{
+  fill: #aaa;
+}
+
+div.checkbox{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+div.task input{
+  border: 2px solid #777;
+  padding: 2px 4px;
 }
